@@ -70,6 +70,12 @@ Convert mp4/mov/avi videos to WebM.
 assetforge webm .
 ```
 
+### 5. Web Aggressive Optimization
+Convert images to WebP and videos to WebM, **deleting the originals** (backups are created).
+```bash
+assetforge web .
+```
+
 ---
 
 ## 👨‍💻 Developer Zone (Source Code)

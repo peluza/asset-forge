@@ -8,6 +8,7 @@ try:
     from core.svg_converter import process_svg_conversion
     from core.webp_converter import process_webp_conversion
     from core.webm_converter import process_webm_conversion
+    from core.web_optimizer import process_web_optimization
 except ImportError:
     # Support for dev mode execution without installation
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -15,6 +16,7 @@ except ImportError:
     from core.svg_converter import process_svg_conversion
     from core.webp_converter import process_webp_conversion
     from core.webm_converter import process_webm_conversion
+    from core.web_optimizer import process_web_optimization
 
 def main():
     parser = argparse.ArgumentParser(
@@ -40,6 +42,10 @@ def main():
     # Command: webm (video)
     parser_webm = subparsers.add_parser('webm', help='Convert videos (mp4/mov/avi) to WebM')
     parser_webm.add_argument('path', nargs='?', default='.', help='Folder or file to process (Default: current)')
+
+    # Command: web (Aggressive Optimization)
+    parser_web = subparsers.add_parser('web', help='Aggressive Optimization: Convert Images->WebP, Video->WebM, Backup & Delete Originals')
+    parser_web.add_argument('path', nargs='?', default='.', help='Folder or file to process (Default: current)')
 
     if len(sys.argv) == 1:
         parser.print_help()
@@ -70,6 +76,8 @@ def main():
             process_webp_conversion(target_path)
         elif args.command == 'webm':
             process_webm_conversion(target_path)
+        elif args.command == 'web':
+            process_web_optimization(target_path)
         else:
             parser.print_help()
 

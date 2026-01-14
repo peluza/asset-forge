@@ -8,9 +8,9 @@ EXE_NAME="assetforge"
 # Case 1: Release (exe is next to script)
 if [ -f "$DIR/$EXE_NAME" ]; then
     SOURCE="$DIR/$EXE_NAME"
-# Case 2: Dev (exe is in dist)
-elif [ -f "$DIR/dist/$EXE_NAME" ]; then
-    SOURCE="$DIR/dist/$EXE_NAME"
+# Case 2: Dev (exe is in ../dist)
+elif [ -f "$DIR/../dist/$EXE_NAME" ]; then
+    SOURCE="$DIR/../dist/$EXE_NAME"
 else
     echo "[ERROR] '$EXE_NAME' not found."
     echo "Please make sure to run the build script or download the full package."

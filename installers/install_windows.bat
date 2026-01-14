@@ -12,12 +12,12 @@ REM Case 1: Within release ZIP (exe is next to script)
 if exist "%EXE_NAME%" (
     set "SOURCE=%EXE_NAME%"
 ) else (
-    REM Case 2: Dev mode (exe is in dist/)
-    if exist "dist\%EXE_NAME%" (
-        set "SOURCE=dist\%EXE_NAME%"
+    REM Case 2: Dev mode (exe is in ../dist/)
+    if exist "..\dist\%EXE_NAME%" (
+        set "SOURCE=..\dist\%EXE_NAME%"
     ) else (
         echo [ERROR] '%EXE_NAME%' not found.
-        echo Please make sure you are in the correct folder or run 'build.bat'.
+        echo Please make sure you are in the correct folder or run 'builders\build.bat'.
         pause
         exit /b 1
     )

@@ -39,7 +39,7 @@ jobs:
       run: |
         mkdir release
         copy dist\assetforge.exe release\
-        copy install_windows.bat release\install.bat
+        copy installers\install_windows.bat release\install.bat
         cd release
         powershell Compress-Archive -Path * -DestinationPath ..\AssetForge-Windows.zip
 
@@ -49,7 +49,7 @@ jobs:
       run: |
         mkdir release
         cp dist/assetforge release/
-        cp install_unix.sh release/install.sh
+        cp installers/install_unix.sh release/install.sh
         chmod +x release/install.sh release/assetforge
         cd release
         tar -czvf ../AssetForge-${{ matrix.os }}.tar.gz *

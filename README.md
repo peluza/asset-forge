@@ -24,8 +24,8 @@ You don't need to know how to code to use AssetForge. Just download the installe
 4.  Run the included automatic installer:
 
 ### 🪟 Windows
-Double-click the `install.bat` file.
-*(This will enable the `assetforge` command in your terminal).*
+Double-click the `install.bat` file (included in release). 
+*(Or run `installers\install_windows.bat` from source).*
 
 ### 🐧 Linux / 🍎 Mac
 Open a terminal in the unzipped folder and run:
@@ -33,6 +33,7 @@ Open a terminal in the unzipped folder and run:
 chmod +x install.sh
 ./install.sh
 ```
+*(Or run `installers/install_unix.sh` from source).*
 
 ---
 
@@ -90,8 +91,8 @@ python asset_forge.py --help
 ### Build Executables
 If you want to generate your own `.exe` binaries:
 
-- **Windows**: Run `build.bat`.
-- **Linux/Mac**: Run `./build.sh`.
+- **Windows**: Run `builders\build.bat`.
+- **Linux/Mac**: Run `builders/build.sh`.
 
 Artifacts will be generated in the `dist/` folder.
 

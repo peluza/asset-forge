@@ -2,3 +2,5 @@ rembg
 Pillow
 vtracer
 pyinstaller
+imageio
+imageio-ffmpeg

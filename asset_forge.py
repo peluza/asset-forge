@@ -7,12 +7,14 @@ try:
     from core.background_remover import process_background_removal
     from core.svg_converter import process_svg_conversion
     from core.webp_converter import process_webp_conversion
+    from core.webm_converter import process_webm_conversion
 except ImportError:
     # Support for dev mode execution without installation
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     from core.background_remover import process_background_removal
     from core.svg_converter import process_svg_conversion
     from core.webp_converter import process_webp_conversion
+    from core.webm_converter import process_webm_conversion
 
 def main():
     parser = argparse.ArgumentParser(
@@ -31,9 +33,13 @@ def main():
     parser_svg = subparsers.add_parser('svg', help='Convert images to vectorized SVG')
     parser_svg.add_argument('path', nargs='?', default='.', help='Folder or file to process (Default: current)')
 
-    # Command: webp
+    # Command: webp (images)
     parser_webp = subparsers.add_parser('webp', help='Generate WebP versions (1x, 2x, 3x) for Apps/Web')
     parser_webp.add_argument('path', nargs='?', default='.', help='Folder or file to process (Default: current)')
+
+    # Command: webm (video)
+    parser_webm = subparsers.add_parser('webm', help='Convert videos (mp4/mov/avi) to WebM')
+    parser_webm.add_argument('path', nargs='?', default='.', help='Folder or file to process (Default: current)')
 
     if len(sys.argv) == 1:
         parser.print_help()
@@ -62,6 +68,8 @@ def main():
             process_svg_conversion(target_path)
         elif args.command == 'webp':
             process_webp_conversion(target_path)
+        elif args.command == 'webm':
+            process_webm_conversion(target_path)
         else:
             parser.print_help()
 

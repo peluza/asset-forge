@@ -10,6 +10,7 @@ AssetForge is a command-line tool (CLI) designed for developers, designers, and 
 - **🖼️ Background Removal (AI)**: Automatically remove backgrounds from sprites, products, or icons using CPU-safe AI.
 - **📐 Vectorization (Bitmap to SVG)**: Convert pixelated logos or sketches into high-quality scalable SVG vectors.
 - **⚡ WebP Optimization**: Automatically generate `1x`, `2x`, and `3x` variants for high-performance mobile and web apps.
+- **🎥 WebM Video**: Convert `.mp4`, `.mov`, `.avi` to efficient `.webm` format for the web.
 - **🚀 Total Portability**: No Python installation or external libraries required. Works on Windows, Linux, and MacOS.
 
 ---
@@ -61,6 +62,12 @@ assetforge svg .
 Create optimized mobile versions (1x, 2x, 3x assets).
 ```bash
 assetforge webp .
+```
+
+### 4. Convert to WebM (Video)
+Convert mp4/mov/avi videos to WebM.
+```bash
+assetforge webm .
 ```
 
 ---

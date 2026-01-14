@@ -14,7 +14,9 @@ setup(
         "rembg[cpu]", # Force CPU version for broader compatibility in portable builds
         "Pillow",
         "vtracer",
-        "pyinstaller" 
+        "pyinstaller",
+        "imageio",
+        "imageio-ffmpeg" 
     ],
     entry_points={
         "console_scripts": [

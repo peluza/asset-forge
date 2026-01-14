@@ -8,7 +8,8 @@ setup(
     author_email="contact@editech.dev",
     url="https://editech.dev",
     packages=find_packages(),
-    py_modules=["asset_forge", "background_remover", "svg_converter", "webp_converter"],
+    # py_modules removed in favor of find_packages detecting 'core'
+    py_modules=["asset_forge"],
     install_requires=[
         "rembg[cpu]", # Force CPU version for broader compatibility in portable builds
         "Pillow",

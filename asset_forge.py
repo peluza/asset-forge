@@ -4,15 +4,15 @@ import sys
 
 # Import local modules
 try:
-    from background_remover import process_background_removal
-    from svg_converter import process_svg_conversion
-    from webp_converter import process_webp_conversion
+    from core.background_remover import process_background_removal
+    from core.svg_converter import process_svg_conversion
+    from core.webp_converter import process_webp_conversion
 except ImportError:
     # Support for dev mode execution without installation
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-    from background_remover import process_background_removal
-    from svg_converter import process_svg_conversion
-    from webp_converter import process_webp_conversion
+    from core.background_remover import process_background_removal
+    from core.svg_converter import process_svg_conversion
+    from core.webp_converter import process_webp_conversion
 
 def main():
     parser = argparse.ArgumentParser(
